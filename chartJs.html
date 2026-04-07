@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Implementando o Chart Js</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+<body>
+    <h2 style="text-align: center; font-weight: 600; margin-top: 80px; font-size: 2rem; font-family:Georgia, 'Times New Roman', Times, serif;">Implementação do Chart Js - Pesquisa e Inovação</h2>
+    <div style="display: flex; justify-content: center; align-items: center; margin: 150px 0;">
+        <div>
+        <canvas style="width:45vw;" id="grafico"></canvas>
+        </div>
+        <div>
+            <canvas style="width:45vw" id="grafico2"></canvas>
+        </div>
+    </div>
+</body>
+
+<script>
+  const ctx = document.getElementById('grafico');
+
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: ['12:00', '13:00', '14:00', '15:00', '16:00', '17:00'],
+      datasets: [{
+        label: 'Temperatura',
+        data: [30, 29, 28, 25, 22, 23],
+        borderWidth: 1,
+        backgroundColor: 'rgb(0, 0, 139)',
+        borderColor: 'rgb(0, 0, 139)'
+      }, {
+        label: 'Umidade',
+        data: [80, 82, 80, 85, 80, 83],
+        borderWidth: 1,
+        backgroundColor: 'rgb(246, 161, 4)',
+        borderColor: 'rgb(246, 161, 4)'
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+
+  const ctx2 = document.getElementById('grafico2');
+
+  new Chart(ctx2, {
+    type: 'bar',
+    data: {
+      labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho'],
+      datasets: [{
+        label: 'Temperatura média',
+        data: [22, 24, 27, 23, 20, 18],
+        borderWidth: 1,
+        backgroundColor: 'rgb(0, 0, 139)',
+        borderColor: 'rgb(0, 0, 139)'
+      }, {
+        label: 'Umidade média',
+        data: [90, 89, 93, 87, 88, 82],
+        borderWidth: 1,
+        backgroundColor: 'rgb(246, 161, 4)',
+        borderColor: 'rgb(246, 161, 4)'
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+</script>
+
+</html>
